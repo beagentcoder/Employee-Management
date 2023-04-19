@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>check</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <form id="searchForm">
+    <label for="empid">Enter Employee ID:</label>
+    <input type="text" id="empid" name="empid" />
+    <button type="button" onclick="fetchEmployee()">Search</button>
+  </form>
+ <h1 class="text-centre">Employee List</h1>
+  <div class="container">
+    <table class=" table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Employee ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Designation</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTableBody">
+       
+        
+      </tbody>
+    </table>
+  </div>
+  <!-- <table>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Designation</th>
+    </tr>
+    <tbody id="employeeTableBody">
+       //Employee data will be appended here  __this is a comment
+    </tbody>
+  </table> -->
+  <div class="go-to-home">
+    <a href="index.html">Go to Home</a>
+  </div>
+  <script>
+    async function fetchEmployee() {
+      var empid = document.getElementById('empid').value;
+      await fetch(`http://localhost:4000/findemp/${empid}`)
+        .then(response => response.json())
+        .then(employees => {
+          // Loop through each employee and append to table
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${employees.empid}</td>
+            <td>${employees.name}</td>
+            <td>${employees.salary}</td>
+            <td>${employees.designation}</td>
+          `;
+          document.getElementById('employeeTableBody').appendChild(tr);
+        })
+        .catch(error => console.log(error))
+    }
+
+  </script>
+
+</body>
+
+</html>

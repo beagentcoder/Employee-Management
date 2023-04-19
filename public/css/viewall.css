@@ -1,0 +1,111 @@
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    /* font-family: Arial, sans-serif; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Style for table cells */
+  td {
+    padding: 12px;
+  }
+  
+  /* Style for alternate row background color */
+  tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  /* Style for table container */
+  #employeeTableBody {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  /* Style for page title */
+  h1 { 
+    
+    text-align: center;
+    color: #6666ff;
+    text-shadow: 1px 2px #1aa3ff
+  }
+  
+  /* Hover effect on table rows */
+  tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+  }
+  
+  /* Style for table header on hover */
+  th:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles for small screens */
+  @media (max-width: 768px) {
+    th, td {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    #employeeTableBody {
+      max-height: none;
+      overflow-y: visible;
+    }
+  }
+  
+.go-to-home {
+  text-align: center;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+
+}
+
+.go-to-home a {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  text-decoration: none;
+}
+
+.go-to-home a:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
